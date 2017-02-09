@@ -20,9 +20,16 @@ public class Message
 		return (this.type & type.value()) != 0;
 	}
 	
-	public void setType(MessageType type)
+	public Message setType(MessageType type)
 	{
 		this.type |= type.value();
+		return this;
+	}
+	
+	public Message setTypeExact(int type)
+	{
+		this.type = type;
+		return this;
 	}
 	
 	public String toString()

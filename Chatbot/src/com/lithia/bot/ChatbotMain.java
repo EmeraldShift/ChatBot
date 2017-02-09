@@ -14,9 +14,9 @@ public class ChatbotMain
 		
 		Scanner in = new Scanner(System.in);
 		String line;
-		while (!(line = in.nextLine()).equals("!forcequit"))
+		while (bot.active && !(line = in.nextLine()).equals("!forcequit"))
 		{
-			System.out.println(bot.getResponse(new Message(line)));
+			System.out.println(bot.getResponse(new Message(line.replaceAll("|", ""))));
 		}
 		
 		in.close();
